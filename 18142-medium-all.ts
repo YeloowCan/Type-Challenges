@@ -20,7 +20,7 @@ type cases = [
 
 // ============= Your Code Here =============
 type All<T extends any[], K> = T extends [infer A, ...infer B]
-  ? K extends A
+  ? Equal<A, K> extends true
     ? All<B, K>
     : false
   : true;
